@@ -1,0 +1,15 @@
+{
+  "name": "bitshares-witness-tracker",
+  "version": "0.0.1",
+  "author": {
+    "name": "Zapata"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "demux": "^1.0.3",
+    "demux-bitshares": "file:../.."
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}
