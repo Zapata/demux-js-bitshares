@@ -55,9 +55,6 @@
       }
     },
     "testRegex": "(/test/.*(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
-    "testEnvironment": "node",
-    "moduleNameMapper": {
-      "mongodb": "<rootDir>/src/testHelpers/mongoMock.ts"
-    }
+    "testEnvironment": "node"
   }
 }
