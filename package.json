@@ -36,7 +36,7 @@
     "release": "release-it",
     "compile": "tsc",
     "watch": "tsc -w",
-    "lint": "tslint -c tslint.json src/**/*.ts",
+    "lint": "tslint -c tslint.json {src,test}/**/*.ts",
     "test": "jest",
     "build-docs": "./build-docs.sh"
   },

@@ -2,7 +2,6 @@ import { AbstractActionReader } from "demux"
 import request from "request-promise-native"
 import { BitsharesBlock } from "./BitsharesBlock"
 
-
 /**
  * Reads from a Bitshares node to get blocks of operations.
  * It is important to note that virtual transactions will not be included,
@@ -10,7 +9,7 @@ import { BitsharesBlock } from "./BitsharesBlock"
  */
 export class BitsharesActionReader extends AbstractActionReader {
   protected bitsharesEndpoint: string
-  protected requestId = 1;
+  protected requestId = 1
   constructor(
     bitsharesEndpoint: string = "http://localhost:9080",
     public startAtBlock: number = 1,
@@ -47,10 +46,10 @@ export class BitsharesActionReader extends AbstractActionReader {
     const requestParams = {
       url:  this.bitsharesEndpoint,
       json: {
-        "jsonrpc": "2.0", 
-        "id": this.requestId++, 
-        "method": method, 
-        "params": params 
+        "jsonrpc": "2.0",
+        "id": this.requestId++,
+        "method": method,
+        "params": params
       }
     }
     const response = await this.requestInstance.post(requestParams)

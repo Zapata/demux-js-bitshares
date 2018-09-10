@@ -1,5 +1,5 @@
 import { Block, BlockInfo } from "demux"
-import { OperationType, OperationResultType, BitsharesAction } from "./interfaces"
+import { BitsharesAction, OperationResultType, OperationType } from "./interfaces"
 
 export class BitsharesBlock implements Block {
   public actions: BitsharesAction[]
@@ -15,7 +15,7 @@ export class BitsharesBlock implements Block {
   }
 
   protected hashToBlockNum(hash: string) {
-    return parseInt("0x" + hash.slice(0, 8))
+    return parseInt("0x" + hash.slice(0, 8), 16)
   }
 
   protected collectActionsFromBlock(rawBlock: any): BitsharesAction[] {
@@ -26,7 +26,7 @@ export class BitsharesBlock implements Block {
           type: OperationType[operation[0]],
           payload: {
             transactionIndex: transactionId,
-            operationIndex: operationIndex,
+            operationIndex,
             operation: operation[1],
             result: {
               type: OperationResultType[operationResult[0]],
