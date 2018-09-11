@@ -25,7 +25,9 @@
     "typescript": "^2.9.2"
   },
   "dependencies": {
+    "@types/elasticsearch": "^5.0.26",
     "demux": "^1.0.3",
+    "elasticsearch": "^15.1.1",
     "request": "^2.87.0",
     "request-promise-native": "^1.0.5"
   },
@@ -54,7 +56,10 @@
         "tsConfigFile": "tsconfig.json"
       }
     },
-    "testRegex": "(/test/.*(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
-    "testEnvironment": "node"
+    "testRegex": "(/test/.*(\\.|/)(test|spec))\\.tsx?$",
+    "testEnvironment": "node",
+    "moduleNameMapper": {
+      "elasticsearch": "<rootDir>/test/helper/ElasticSearchMock.ts"
+    }
   }
 }

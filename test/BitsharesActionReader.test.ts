@@ -45,7 +45,7 @@ describe("BitsharesActionReader", () => {
         blockHash: "28999264",
         blockNumber: 28999264,
         previousBlockHash: "28999263",
-        timestamp: new Date("2018-07-24T06:51:15.000Z")
+        timestamp: new Date("2018-07-24T08:51:15")
       },
       actions: [
         {
